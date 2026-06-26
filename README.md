@@ -10,7 +10,7 @@
 ### AI + IoT Intelligent Surveillance System
 
 > *"All-seeing, always aware."*
-> 
+>
 > ARGUS is a next-generation surveillance solution that fuses IoT hardware with a Large Language Model (LLaVA) to deliver **real-time, context-aware threat detection** — eliminating the blind spots of traditional security systems.
 
 </div>
@@ -19,33 +19,22 @@
 
 ## 📽️ Demo Video
 
-> **Watch ARGUS in action:**
+<!-- Upload your video to the repo under /assets/ folder, then replace the path below -->
+<!-- Option 1: GitHub hosted video (drag-drop .mp4 into any Issue to get a hosted URL) -->
 
-https://github.com/your-username/argus/assets/your-asset-id/LMC_20250330_125550_Prime_Colour.mp4
+<div align="center">
 
-> 💡 *If the video doesn't render above, [click here to watch the demo](./LMC_20250330_125550_Prime_Colour.mp4) or place the video file in your repo's `/assets` folder and update the link.*
+[![ARGUS Demo](https://img.shields.io/badge/▶%20Watch%20Demo-Click%20Here-red?style=for-the-badge)](./LMC_20250330_125550_Prime_Colour.mp4)
 
----
+> 💡 To embed video on GitHub: Go to any Issue → drag & drop your `.mp4` → copy the generated `https://github.com/...` URL → paste it directly in the README (GitHub auto-renders it).
 
-## 📌 Table of Contents
-
-- [Overview](#-overview)
-- [The Problem](#-the-problem)
-- [Our Solution](#-our-solution)
-- [System Architecture](#-system-architecture)
-- [Key Features](#-key-features)
-- [Tech Stack](#-tech-stack)
-- [How It Works](#-how-it-works)
-- [Installation & Setup](#-installation--setup)
-- [Results & Performance](#-results--performance)
-- [Future Scope](#-future-scope)
-- [Team](#-team)
+</div>
 
 ---
 
 ## 🧠 Overview
 
-**ARGUS** (Autonomous Real-time Guardian Using Surveillance) is an AI-powered intelligent monitoring system built on the intersection of **IoT**, **Computer Vision**, and **Large Language Models**. It continuously captures live video through an ESP32-CAM, processes it with lightweight vision models, and uses the **LLaVA LLM** for deep contextual reasoning — automatically distinguishing between routine activity and genuine threats.
+**ARGUS** (Autonomous Real-time Guardian Using Surveillance) is an AI-powered intelligent monitoring system built on the intersection of **IoT**, **Computer Vision**, and **Large Language Models**. It continuously captures live video through an ESP32-CAM mounted on a mobile surveillance car, processes frames with lightweight vision models, and uses the **LLaVA LLM** for deep contextual reasoning — automatically distinguishing between routine activity and genuine threats.
 
 Unlike conventional CCTV systems that rely on passive recording and human review, ARGUS **thinks, understands, and acts**.
 
@@ -73,34 +62,44 @@ ARGUS addresses each of these pain points through a **hybrid AI pipeline**:
 - **LLaVA LLM** is invoked selectively for contextual reasoning — only when an event warrants deeper analysis.
 - **WebSocket communication** ensures sub-second latency between the ESP32-CAM and the inference backend.
 - **Autonomous alerts** are triggered intelligently, dramatically reducing false positives.
+- **Mobile surveillance car** navigates without a predefined path, using human-like thinking to follow targets.
 
 ---
 
 ## 🏗️ System Architecture
 
-```
-┌──────────────────────────────────────────────────────────────────┐
-│                        ARGUS PIPELINE                            │
-│                                                                  │
-│  [ESP32-CAM]  ──►  [Frame Capture]  ──►  [Vision Model]         │
-│                                               │                  │
-│                                    ┌──────────▼──────────┐      │
-│                                    │  Object / Behavior  │      │
-│                                    │  Detection Layer    │      │
-│                                    └──────────┬──────────┘      │
-│                                               │                  │
-│                                    ┌──────────▼──────────┐      │
-│                                    │   LLaVA LLM Engine  │      │
-│                                    │  (Contextual Reason)│      │
-│                                    └──────────┬──────────┘      │
-│                                               │                  │
-│                              ┌────────────────▼────────────┐    │
-│                              │   Decision: Normal / Alert  │    │
-│                              └────────────┬────────────────┘    │
-│                                           │                      │
-│                              [Autonomous Alert System]           │
-└──────────────────────────────────────────────────────────────────┘
-```
+<div align="center">
+
+![ARGUS System Architecture](./architecture.png)
+
+</div>
+
+The pipeline operates in 5 stages:
+
+1. **Data Collection** — The surveillance car streams continuous frames via WebSocket, stored locally for processing.
+2. **LLM Instructions** — LLaVA sends movement and recording instructions back to the car (follow target, record & stream).
+3. **Disturbance Detection** — The system identifies suspicious activity, fights, fire, and smoke.
+4. **Custom Instructions** — The monitoring dashboard sends operator-defined rules to the LLM for adaptive behavior.
+5. **Live Feed** — Real-time video with GPS location streams to the Surveillance Monitoring Dashboard, accessible by the Safety Department.
+
+---
+
+## 🤖 Hardware
+
+<div align="center">
+
+![ARGUS Surveillance Car](./hardware.png)
+
+*The ARGUS surveillance car — ESP32-CAM mounted on a 4WD chassis with Li-ion battery pack, motor driver, and onboard sensors.*
+
+</div>
+
+The mobile unit is built on a **4-wheel drive acrylic chassis** equipped with:
+- ESP32-CAM for live video streaming
+- Li-ion battery pack for autonomous power
+- Motor driver module for directional control
+- Onboard sensors for environment awareness
+- No predefined path — driven by LLM decision-making
 
 ---
 
@@ -108,11 +107,13 @@ ARGUS addresses each of these pain points through a **hybrid AI pipeline**:
 
 - 🎥 **Live Video Monitoring** — Continuous capture and analysis via ESP32-CAM
 - 🤖 **LLM-Powered Reasoning** — LLaVA interprets scene context, not just pixel changes
-- 🚶 **Behavior Detection** — Identifies loitering, abnormal movement, and unauthorized presence
+- 🚗 **Autonomous Mobile Unit** — Surveillance car navigates with human-like thinking
+- 🚶 **Behavior Detection** — Identifies loitering, fights, abnormal movement, fire & smoke
+- 📍 **GPS Tracking** — Real-time location streamed alongside video feed
 - ⚡ **Real-Time Processing** — WebSocket-based low-latency data pipeline
 - 🔔 **Autonomous Alerts** — Intelligent notifications with minimal false positives
 - 🧩 **Hybrid Architecture** — Edge-side detection + cloud-side reasoning for efficiency
-- 🔌 **IoT Native** — Designed for embedded hardware with constrained resources
+- 📊 **Monitoring Dashboard** — Centralized view for the Safety Department
 
 ---
 
@@ -120,7 +121,7 @@ ARGUS addresses each of these pain points through a **hybrid AI pipeline**:
 
 | Layer | Technology |
 |-------|-----------|
-| **Hardware** | ESP32-CAM |
+| **Hardware** | ESP32-CAM, 4WD Robot Chassis |
 | **Firmware** | Arduino (C++) |
 | **Backend** | Python 3.8+ |
 | **AI / Vision** | LLaVA (Large Language and Vision Assistant) |
@@ -133,23 +134,23 @@ ARGUS addresses each of these pain points through a **hybrid AI pipeline**:
 ## ⚙️ How It Works
 
 ### Step 1 — Video Capture
-The **ESP32-CAM** module streams live video frames over WebSockets to the Python backend at configurable intervals.
+The **ESP32-CAM** on the surveillance car streams live video frames over WebSockets to the Python backend continuously. Frames are stored locally for processing.
 
 ### Step 2 — Lightweight Detection
 Incoming frames are analyzed by a **computer vision model** for:
 - Human presence detection
 - Loitering behavior
 - Abnormal or erratic movement patterns
+- Fire and smoke signatures
 
 ### Step 3 — LLM Contextual Reasoning
-When a potential event is flagged, the frame and detection metadata are passed to **LLaVA**. The LLM evaluates the broader scene context — for example, distinguishing a delivery person from an intruder, or a crowd gathering from a fight.
+When a potential event is flagged, the frame and detection metadata are passed to **LLaVA**. The LLM evaluates the broader scene context — distinguishing a delivery person from an intruder, a crowd gathering from a fight, or steam from actual fire.
 
-### Step 4 — Decision & Alert
-Based on LLaVA's assessment:
-- **Normal** → Log and continue monitoring
-- **Suspicious** → Trigger an autonomous alert with contextual description
-
-This selective LLM invocation is the key innovation: it preserves **real-time performance** while enabling **deep intelligence**.
+### Step 4 — Decision & Control
+Based on LLaVA's assessment, the system either:
+- **Sends instructions to the car** — follow target, continue recording, reposition
+- **Triggers an alert** — notifies the Safety Department with live feed + GPS location
+- **Logs and continues** — for normal activity
 
 ---
 
@@ -204,6 +205,7 @@ python main.py
 | False Positive Rate | Significantly reduced vs traditional systems |
 | Alert Latency | Near real-time via WebSockets |
 | System Overhead | Low — lightweight model on edge, LLM invoked selectively |
+| Mobility | Autonomous navigation, no predefined path |
 
 ---
 
@@ -213,7 +215,7 @@ python main.py
 - [ ] Integration with smart home/building systems
 - [ ] On-device LLM quantization for full edge deployment
 - [ ] Mobile app for remote monitoring and alerts
-- [ ] Facial recognition with privacy-preserving options
+- [ ] Enhanced GPS mapping with incident heat-maps
 - [ ] Cloud sync and historical incident logging
 
 ---
