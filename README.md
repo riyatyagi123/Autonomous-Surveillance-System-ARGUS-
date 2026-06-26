@@ -1,3 +1,4 @@
+<div align="center">
 
 <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge" />
 <img src="https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python" />
@@ -18,14 +19,9 @@
 
 ## 📽️ Demo Video
 
-<!-- Upload your video to the repo under /assets/ folder, then replace the path below -->
-<!-- Option 1: GitHub hosted video (drag-drop .mp4 into any Issue to get a hosted URL) -->
-
 <div align="center">
 
-[![ARGUS Demo](https://img.shields.io/badge/▶%20Watch%20Demo-Click%20Here-red?style=for-the-badge)](./LMC_20250330_125550_Prime_Colour.mp4)
-
-> 💡 To embed video on GitHub: Go to any Issue → drag & drop your `.mp4` → copy the generated `https://github.com/...` URL → paste it directly in the README (GitHub auto-renders it).
+[![ARGUS Demo](https://img.youtube.com/vi/CFNTwo8g7mY/0.jpg)](https://www.youtube.com/watch?v=CFNTwo8g7mY)
 
 </div>
 
@@ -69,8 +65,7 @@ ARGUS addresses each of these pain points through a **hybrid AI pipeline**:
 
 <div align="center">
 
-ARGUS System Architecture<img width="600" alt="architecture" src="https://github.com/user-attachments/assets/48211768-6340-434d-8915-08fdad40ab0a" />
-
+<img width="600" alt="ARGUS System Architecture" src="https://github.com/user-attachments/assets/48211768-6340-434d-8915-08fdad40ab0a" />
 
 </div>
 
@@ -88,14 +83,14 @@ The pipeline operates in 5 stages:
 
 <div align="center">
 
-ARGUS Surveillance Car<img width="600"  alt="hardware" src="https://github.com/user-attachments/assets/a12e34f1-fb39-4dab-89dd-22ec5c31a3f0" />
-
+<img width="600" alt="ARGUS Surveillance Car" src="https://github.com/user-attachments/assets/a12e34f1-fb39-4dab-89dd-22ec5c31a3f0" />
 
 *The ARGUS surveillance car — ESP32-CAM mounted on a 4WD chassis with Li-ion battery pack, motor driver, and onboard sensors.*
 
 </div>
 
 The mobile unit is built on a **4-wheel drive acrylic chassis** equipped with:
+
 - ESP32-CAM for live video streaming
 - Li-ion battery pack for autonomous power
 - Motor driver module for directional control
@@ -139,6 +134,7 @@ The **ESP32-CAM** on the surveillance car streams live video frames over WebSock
 
 ### Step 2 — Lightweight Detection
 Incoming frames are analyzed by a **computer vision model** for:
+
 - Human presence detection
 - Loitering behavior
 - Abnormal or erratic movement patterns
@@ -149,6 +145,7 @@ When a potential event is flagged, the frame and detection metadata are passed t
 
 ### Step 4 — Decision & Control
 Based on LLaVA's assessment, the system either:
+
 - **Sends instructions to the car** — follow target, continue recording, reposition
 - **Triggers an alert** — notifies the Safety Department with live feed + GPS location
 - **Logs and continues** — for normal activity
@@ -218,3 +215,14 @@ python main.py
 - [ ] Mobile app for remote monitoring and alerts
 - [ ] Enhanced GPS mapping with incident heat-maps
 - [ ] Cloud sync and historical incident logging
+
+---
+
+
+<div align="center">
+
+**Built with 🧠 intelligence and ⚡ purpose.**
+
+*ARGUS — Because security should understand, not just record.*
+
+</div>
