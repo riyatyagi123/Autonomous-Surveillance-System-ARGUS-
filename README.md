@@ -1,4 +1,4 @@
-<div align="center">
+<img width="1030" height="848" alt="hardware" src="https://github.com/user-attachments/assets/5e4e3676-290d-43ba-8810-9b92c5b2c99f" /><div align="center">
 
 <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge" />
 <img src="https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python" />
@@ -70,7 +70,8 @@ ARGUS addresses each of these pain points through a **hybrid AI pipeline**:
 
 <div align="center">
 
-![ARGUS System Architecture](./architecture.png)
+![ARGUS System Architecture]<img width="1450" height="1383" alt="architecture" src="https://github.com/user-attachments/assets/48211768-6340-434d-8915-08fdad40ab0a" />
+
 
 </div>
 
@@ -88,7 +89,8 @@ The pipeline operates in 5 stages:
 
 <div align="center">
 
-![ARGUS Surveillance Car](./hardware.png)
+![ARGUS Surveillance Car]<img width="1030" height="848" alt="hardware" src="https://github.com/user-attachments/assets/a12e34f1-fb39-4dab-89dd-22ec5c31a3f0" />
+
 
 *The ARGUS surveillance car — ESP32-CAM mounted on a 4WD chassis with Li-ion battery pack, motor driver, and onboard sensors.*
 
@@ -217,29 +219,3 @@ python main.py
 - [ ] Mobile app for remote monitoring and alerts
 - [ ] Enhanced GPS mapping with incident heat-maps
 - [ ] Cloud sync and historical incident logging
-
----
-
-## 👥 Team
-
-| Name | Role |
-|------|------|
-| *(Add your name)* | AI / ML Engineer |
-| *(Add teammate)* | IoT / Hardware Engineer |
-| *(Add teammate)* | Backend Developer |
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-<div align="center">
-
-**Built with 🧠 intelligence and ⚡ purpose.**
-
-*ARGUS — Because security should understand, not just record.*
-
-</div>
